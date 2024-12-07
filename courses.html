@@ -78,13 +78,24 @@
             text-decoration: none;
             color: inherit;
         }
-        .courses-container {
+    
+
+/* Course Container Styling */
+.courses-container {
+    flex: 0 0 30%; /* Makes each course take 30% of the width on larger screens */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-    gap: 20px;
+    flex-direction: column;
+    margin-top: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .course {
+        flex: 0 0 100%; /* Switches to a full-width layout on screens smaller than 768px */
+    }
+}
+
 
 /* Course Container Styling */
 .course {
@@ -142,9 +153,9 @@
 <body>
     <header>
         <nav>
-            <a href="about.html">About</a>
+            <a href="About.html">About</a>
             <a href="course.html">Courses</a>
-            <a href="tutors.html">Tutors</a>
+            <a href="Tutors.html">Tutors</a>
             <a href="Contact.html">Contact</a>
         </nav>
         <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
@@ -157,6 +168,17 @@
             
        
             <div class="courses-list" id="courses-list">
+
+                <div class="course">
+                    <a href="coursescomputer.html" class="course-link">
+                        <img src="techcourses.png" alt="Course 3 Top Image" class="course-image">
+                        <div class="course-content">
+                            <h2>Tech Courses</h2>
+                            <p>Explore our wide range of courses designed to equip you with the skills needed for today's tech-driven world.</p>
+                        </div>
+                    </a>
+                </div>
+                
                 <div class="course">
                     <a href="https://youtube.com/playlist?list=PLmcH5dQWpdtQ_eR1zEfb1L3raEueW-2MD&si=sSE-rpNIaGuYs7Fp" class="course-link">
                         <img src="digitalsatenglish.jpeg" alt="Course 1 Top Image" class="course-image">
@@ -172,15 +194,6 @@
                         <div class="course-content">
                             <h2>Digital SAT Math Section</h2>
                             <p>This is a crash course of the Digital SAT Math section, covering all essential formulas and concepts.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="course">
-                    <a href="coursescomputer.html" class="course-link">
-                        <img src="techcourses.png" alt="Course 3 Top Image" class="course-image">
-                        <div class="course-content">
-                            <h2>Tech Courses</h2>
-                            <p>Explore our wide range of courses designed to equip you with the skills needed for today's tech-driven world.</p>
                         </div>
                     </a>
                 </div>
