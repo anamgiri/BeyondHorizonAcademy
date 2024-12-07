@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses at AlgoLearn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .filter-input {
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+.greeting {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+
+        @keyframes pulse {
+            0% {
+                background-color: #ddd;
+            }
+            50% {
+                background-color: #eee;
+            }
+            100% {
+                background-color: #ddd;
+            }
+        }
+
+        .courses-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .courses-list li {
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s, opacity 0.5s, transform 0.5s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .courses-list li.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .courses-list li:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        body.dark-theme .courses-list li {
+            background-color: #444;
+            color: #fff;
+        }
+
+        body.dark-theme .courses-list li:hover {
+            background-color: #3e3d3d;
+        }
+
+        .course-link {
+            text-decoration: none;
+            color: inherit;
+        }
+    
+
+/* Course Container Styling */
+.courses-container {
+    flex: 0 0 30%; /* Makes each course take 30% of the width on larger screens */
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .course {
+        flex: 0 0 100%; /* Switches to a full-width layout on screens smaller than 768px */
+    }
+}
+
+
+/* Course Container Styling */
+.course {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            flex: 0 0 30%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 40px;
+        }
+
+        .course:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+.course img.course-image {
+    width: 100%;
+    height: auto;
+}
+
+.course-content {
+    padding: 15px;
+}
+
+.course-content h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.course-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+.black{
+    color: black;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .course {
+        flex: 0 0 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="About.html">About</a>
+            <a href="course.html">Courses</a>
+            <a href="Tutors.html">Tutors</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </header>
+    <main>
+        <div class="content">
+
+            <h1>Our Courses</h1>
+            <h3 class="black">Explore our wide range of courses from SAT to NEB to tech:</h3>
+            
+       
+            <div class="courses-list" id="courses-list">
+
+                <div class="course">
+                    <a href="coursescomputer.html" class="course-link">
+                        <img src="techcourses.png" alt="Course 3 Top Image" class="course-image">
+                        <div class="course-content">
+                            <h2>Tech Courses</h2>
+                            <p>Explore our wide range of courses designed to equip you with the skills needed for today's tech-driven world.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="course">
+                    <a href="https://youtube.com/playlist?list=PLmcH5dQWpdtQ_eR1zEfb1L3raEueW-2MD&si=sSE-rpNIaGuYs7Fp" class="course-link">
+                        <img src="digitalsatenglish.jpeg" alt="Course 1 Top Image" class="course-image">
+                        <div class="course-content">
+                            <h2>Digital SAT English Section</h2>
+                            <p>This course covers the entirety of digital SAT English including grammar and reading and writing sections.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="course">
+                    <a href="https://youtube.com/playlist?list=PLmcH5dQWpdtTfd0bRmZWL2iyY1_zzDXDw&si=O-08Yq1OlFl7Dgqj" class="course-link">
+                        <img src="digitalsatmath.jpeg" alt="Course 2 Top Image" class="course-image">
+                        <div class="course-content">
+                            <h2>Digital SAT Math Section</h2>
+                            <p>This is a crash course of the Digital SAT Math section, covering all essential formulas and concepts.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+                
+            </ul>
+        </div>
+    </main>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.removeItem('theme');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        });
+
+        function filterCourses() {
+            const input = document.getElementById('filter-input').value.toLowerCase();
+            const courses = document.querySelectorAll('.course');
+            courses.forEach(course => {
+                const title = course.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(input)) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+
+        function setGreeting() {
+            const hours = new Date().getHours();
+            const greetingElement = document.getElementById('greeting');
+            if (hours < 12) {
+                greetingElement.textContent = 'Good Morning! Explore our courses.';
+            } else if (hours < 18) {
+                greetingElement.textContent = 'Good Afternoon! Check out our latest offerings.';
+            } else {
+                greetingElement.textContent = 'Good Evening! Keep learning with AlgoLearn.';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setGreeting();
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        });
+    </script>
+</body>
+</html>
